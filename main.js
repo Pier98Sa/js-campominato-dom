@@ -79,12 +79,21 @@ function play(){
             
             gameOver();
             esito.innerHTML = 'Peccato, hai perso :-( Hai azzeccato ' + tentativi.length + '  tentativi. Gioca ancora...' ;
-            
+            for (let i = 1; i<=numBox; i++) {
+                
+                document.querySelectorAll('square').removeEventListener('click',handleCellClick);
+    
+            }
 
         }else{
             tentativi.push(cell);
             if(tentativi.length == numBox - NUM_BOMBS ){
                 esito.innerHTML = 'Complimenti hai vinto !!!!' ;
+                for (let i = 1; i<=numBox; i++) {
+                
+                    document.querySelectorAll('square').removeEventListener('click',handleCellClick);
+        
+                }
             }
         }
     
@@ -97,11 +106,8 @@ function play(){
         for(let i = 0; i < quadrati.length; i++){
             if (bombs.includes(parseInt(quadrati[i].innerText))){
                 quadrati[i].classList.add('bomb');
-                
-
             }
             //rimuovere ascoltatori di eventi
-            //stampare la lunghezza di tentativi
         }
     }
     
