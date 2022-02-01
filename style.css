@@ -1,0 +1,111 @@
+/*common rules*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7fffd4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*HEADER*/
+header{
+   background-color: #fff;
+   height: 70px; 
+}
+/*navbar*/
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+/*navbar sx*/
+.navbar.sx img{
+    margin-right: 20px;
+}
+/*navbar dx*/
+.navbar.dx select{
+    margin: 0 5px;
+    padding: 0 30px;
+}
+.navbar.dx button{
+    padding: 0 30px;
+}
+
+/*MAIN*/
+main{
+    height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grid {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#grid-title{
+    font-size: 26px;
+
+}
+/*box che si crea*/
+.square {
+    border: solid 1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/*selettori di difficoltà*/
+.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10); 
+}
+
+.hard{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.crazy{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+/*classe che si attiva con il click sugli square*/
+.clicked {
+    background-color: #6495ed;
+    color: #fff;
+}
+/*classe che si attiva se finiamo su una bomba*/
+.bomb{
+    background-color: #f00;
+    color: #fff;
+}
+/*classe per oscurare il titolo della sezione main*/
+.ms_none{
+    display: none;
+}
+
+/*FOOTER*/
+footer{
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
