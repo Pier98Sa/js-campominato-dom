@@ -79,24 +79,43 @@ function play(){
             
             gameOver();
             esito.innerHTML = 'Peccato, hai perso :-( Hai azzeccato ' + tentativi.length + '  tentativi. Gioca ancora...' ;
+            
+            //elimino gli eventListner 
+            let squares =  document.querySelectorAll('.square');
+            
             for (let i = 1; i<=numBox; i++) {
+                let square = squares[i - 1];
+                squares.removeEventListener('click',handleCellClick);
                 
-                document.querySelectorAll('square').removeEventListener('click',handleCellClick);
-    
             }
 
-        }else{
+        }else{  
             tentativi.push(cell);
+
             if(tentativi.length == numBox - NUM_BOMBS ){
                 esito.innerHTML = 'Complimenti hai vinto !!!!' ;
-                for (let i = 1; i<=numBox; i++) {
                 
-                    document.querySelectorAll('square').removeEventListener('click',handleCellClick);
-        
+                //elimino gli eventListner 
+                let squares =  document.querySelectorAll('.square');
+
+                for (let i = 1; i<=numBox; i++) {
+                let square = squares[i - 1];  
+                square.removeEventListener('click',handleCellClick);
+                    
                 }
-            }
+             }
         }
     
+    }
+
+
+    function remove(){
+        for (let i = 1; i<=numBox; i++) {
+                
+            document.querySelectorAll('square').removeEventListener('click',handleCellClick);
+
+        }
+
     }
 
     //funzione per sapere se siamo capitati su una bomba
