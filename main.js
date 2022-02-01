@@ -21,6 +21,8 @@ function play(){
     const gridElement = document.getElementById('grid');
     gridElement.innerHTML = "";
 
+    let esito = document.getElementById('Risultato');
+
     //inizializzazione della costante per intercettare il livello di difficoltà
     const level = document.getElementById("level").value;
 
@@ -76,8 +78,14 @@ function play(){
         if(bombs.includes(cell)){
             
             gameOver();
+            esito.innerHTML = 'Peccato, hai perso :-( Hai azzeccato ' + tentativi.length + '  tentativi. Gioca ancora...' ;
+            
+
         }else{
             tentativi.push(cell);
+            if(tentativi.length == numBox - NUM_BOMBS ){
+                esito.innerHTML = 'Complimenti hai vinto !!!!' ;
+            }
         }
     
     }
@@ -89,9 +97,11 @@ function play(){
         for(let i = 0; i < quadrati.length; i++){
             if (bombs.includes(parseInt(quadrati[i].innerText))){
                 quadrati[i].classList.add('bomb');
+                
 
             }
-           
+            //rimuovere ascoltatori di eventi
+            //stampare la lunghezza di tentativi
         }
     }
     

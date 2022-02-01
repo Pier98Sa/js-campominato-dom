@@ -48,6 +48,7 @@ header nav {
 main{
     height: calc(100vh - 140px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -62,6 +63,10 @@ main{
 #grid-title{
     font-size: 26px;
 
+}
+
+#Risultato{
+    margin-top: 150px;
 }
 /*box che si crea*/
 .square {
