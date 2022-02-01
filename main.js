@@ -22,6 +22,7 @@ function play(){
     gridElement.innerHTML = "";
 
     let esito = document.getElementById('Risultato');
+    esito.innerHTML = "";
 
     //inizializzazione della costante per intercettare il livello di difficoltà
     const level = document.getElementById("level").value;
@@ -82,10 +83,10 @@ function play(){
             
             //elimino gli eventListner 
             let squares =  document.querySelectorAll('.square');
-            
+
             for (let i = 1; i<=numBox; i++) {
-                let square = squares[i - 1];
-                squares.removeEventListener('click',handleCellClick);
+               let square = squares[i - 1];  
+               square.removeEventListener('click',handleCellClick);
                 
             }
 
@@ -93,7 +94,7 @@ function play(){
             tentativi.push(cell);
 
             if(tentativi.length == numBox - NUM_BOMBS ){
-                esito.innerHTML = 'Complimenti hai vinto !!!!' ;
+                esito.innerHTML = 'COMPLIMENTII HAI VINTO !!!!' ;
                 
                 //elimino gli eventListner 
                 let squares =  document.querySelectorAll('.square');
