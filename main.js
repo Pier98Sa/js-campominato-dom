@@ -94,7 +94,7 @@ function play(){
             tentativi.push(cell);
 
             if(tentativi.length == numBox - NUM_BOMBS ){
-                esito.innerHTML = 'COMPLIMENTII HAI VINTO !!!!' ;
+                esito.innerHTML = 'COMPLIMENTI HAI VINTO !!!!';
                 
                 //elimino gli eventListner 
                 let squares =  document.querySelectorAll('.square');
@@ -104,19 +104,9 @@ function play(){
                 square.removeEventListener('click',handleCellClick);
                     
                 }
-             }
+            }
         }
     
-    }
-
-
-    function remove(){
-        for (let i = 1; i<=numBox; i++) {
-                
-            document.querySelectorAll('square').removeEventListener('click',handleCellClick);
-
-        }
-
     }
 
     //funzione per sapere se siamo capitati su una bomba
