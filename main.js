@@ -14,10 +14,12 @@ function numRandom (min, max){
 
 //funzione per l'avvio del programma
 function play(){
+    //array tentativi
     const tentativi = [];
-    console.log(tentativi);
+    //numero di bombe nella griglia
     const NUM_BOMBS = 16;
-    //reset della griglia ad ogni click
+
+    //reset della pagina ad ogni click
     const gridElement = document.getElementById('grid');
     gridElement.innerHTML = "";
 
@@ -27,6 +29,7 @@ function play(){
     //inizializzazione della costante per intercettare il livello di difficoltà
     const level = document.getElementById("level").value;
 
+    //variabili per la creazione della griglia
     let numBox;
     let size ;
 
@@ -45,7 +48,7 @@ function play(){
     
     generaCampoMinato(numBox,size);
     const bombs = createBombs (NUM_BOMBS, numBox);
-    console.log(bombs);
+    
     /*Funzioni della funzione play*/
 
     //funzione per generare le box che compongono il campo minato
@@ -117,7 +120,6 @@ function play(){
             if (bombs.includes(parseInt(quadrati[i].innerText))){
                 quadrati[i].classList.add('bomb');
             }
-            //rimuovere ascoltatori di eventi
         }
     }
     
